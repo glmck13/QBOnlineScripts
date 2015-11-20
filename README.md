@@ -4,11 +4,11 @@ Simple shell scripts for interfacing with QuickBooks Online API
 ## Acquiring OAUTH Tokens
 1. Install the callback.cgi script on your local webserver. Record the directory where you placed the file within the OAUTH\_VERIFIER variable in qboTokens.conf.
 2. Create an app on the QBO website. Retrieve the app's "OAuth Consumer Key" and "OAuth Consumer Secret" values listed under the "Keys" tab.  Populate these values within the OAUTH\_CONSUMER\_KEY and OAUTH\_CONSUMER\_SECRET variables within qboTokens.conf
-3. Run reqTokens.sh
+3. Run reqToken.sh
 4. Open a web browser, and goto: https://appcenter.intuit.com/Connect/Begin?oauth_token=???", replacing "???" with the oauth\_token value returned by the
 above script.
 5. Follow the instructions on the QBO web site. Login to your developer account, choose a company, and authorize your app to access the selected company.  If all goes well, you will be redirected to the callback.cgi script on your server.  The script populates a file that is referenced by the OAUTH\_VERIFIER variable in qboTokens.conf.
-6. Run accTokens.sh
+6. Run accToken.sh
 7. If all goes well, the last script will return a final set of OAUTH\_TOKEN and OAUTH\_TOKEN\_SECRET values.  The script automatically populates these variables within qboTokens.conf.
 8. Populate the ID value for the company selected in step #5 in the QBO\_REALMID variable within qboTokens.conf.
 
