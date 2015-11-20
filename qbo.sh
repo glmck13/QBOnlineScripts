@@ -32,11 +32,11 @@ OAUTH+="&oauth_signature=$SIGNATURE"
 case "$METHOD" in
 
 	GET)
-		curl -s -H "Accept: application/json" "$URL?$OAUTH"
+		curl -s -H "Accept: application/$QBO_FORMAT" "$URL?$OAUTH"
 		;;
 
 	POST)
-		curl -s -H "Accept: application/json" -H "Content-Type: application/json" -d @- "$URL?$OAUTH"
+		curl -s -H "Accept: application/$QBO_FORMAT" -H "Content-Type: application/$QBO_FORMAT" -d @- "$URL?$OAUTH"
 		;;
 esac
 
