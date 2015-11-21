@@ -13,7 +13,7 @@ above script.
 8. Populate the ID value for the company selected in step #5 in the QBO\_REALMID variable within qboTokens.conf.
 
 ## Calling QBO APIs
-The qbo.sh script is used to invoke QuickBook APIs.  Its syntax is:
+The qbo.sh script is used to invoke QuickBooks APIs.  Its syntax is:
 > qbo.sh _GET|POST API-name params..._
 
 The script reads API input from stdin (applies only to POST calls), and writes output to stdout.  The API input & output format are specified by the QBO\_FORMAT variable within qboTokens.conf. The QBO\_REALMID value can be used as part of the _API-name_ to reference the app's associated company.  If desired, you can maintain separate conf files for your sandbox & production environments.  The sandbox conf file is simply referenced as ${QBO\_SANDBOX}qboTokens.conf.  So in order to switch to the sandbox environment, simply export QBO\_SANDBOX to the appropriate prefix string, e.g. "sandbox-" before calling qbo.sh.
