@@ -19,7 +19,7 @@ The script reads API input from stdin (applies only to POST calls), and writes o
 
 ## Examples
 > qbo.sh GET '/company/$QBO_REALMID/query' 'query=select * from Deposit'  
-<br>
+  
 > qbo.sh POST '/company/$QBO_REALMID/deposit' 'operation=delete' <<EOF  
 { "Id":"??", "SyncToken":99 }  
 EOF  
