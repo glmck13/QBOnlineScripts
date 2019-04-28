@@ -2,9 +2,13 @@
 Simple shell scripts for interfacing with QuickBooks Online API
 
 ## Updated for OAuth 2.0!
-I've been putting off the OAuth 2.0 upgrade... until things broke this morning!  My tokens just expired, so I followed the OAuth 1.0 process outlined below - which has been working solidly for several years now! - to renew my credentials.  Everything worked as expected, until I tried executing the qbo.sh script and started getting authorization failures.  Despite many attempts at a workaround, and pouring over the latest documentation at Quickbooks Online, I decided the best recourse was to make the jump to OAuth 2.0.  It turned out not to be so difficult after all! 
+I've been putting off the OAuth 2.0 upgrade... until things broke this morning.  My tokens just expired, so I followed the OAuth 1.0 process outlined below - which has been working solidly for several years now - to renew my credentials.  Everything worked as expected, until I tried executing the qbo.sh script, and it started returning authorization failures.  Despite many attempts at a workaround, and pouring over the latest documentation at Quickbooks Online, I decided the best recourse was to make the jump to OAuth 2.0.  It turned out not to be so difficult after all.  The qbo.sh interface remains as-is, so only thing that changes is the process for retrieving tokens/credentials.  
 
-## Acquiring OAuth 1.0 tokens (deprecated!)
+## Acquiring OAuth 2.0 tokens (New!)
+1. Install the latest callback.cgi script on an https-enabled webserver.  Record the URI 
+2. Lookup the "CLient ID" and 
+
+## Acquiring OAuth 1.0 tokens (Deprecated!)
 1. Install the callback.cgi script on your local webserver. Record the directory where you placed the file within the OAUTH\_VERIFIER variable in qboTokens.conf.
 2. Create an app on the QBO website. Retrieve the app's "OAuth Consumer Key" and "OAuth Consumer Secret" listed under the "Keys" tab.  Populate these values within the OAUTH\_CONSUMER\_KEY and OAUTH\_CONSUMER\_SECRET variables within qboTokens.conf
 3. Run reqToken.sh
