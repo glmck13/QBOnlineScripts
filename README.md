@@ -2,7 +2,7 @@
 Simple shell scripts for interfacing with QuickBooks Online API
 
 ## Updated for OAuth 2.0!
-I've been putting off the OAuth 2.0 upgrade, until I had no choice this morning.  My OAuth 1.0 tokens expired again this morning, so I followed the OAuth 1.0 process outlined below - which has been working solidly for several years now! - to renew my credentials.  Everything worked as expected, until I tried executing the qbo.sh script, and I started receiving authorization failures.  Despite many attempts at a workaround, and after pouring over the latest documentation at QuickBooks Online, I decided the best recourse was to make the leap to OAuth 2.0.  It turned out not to be so difficult after all.  The qbo.sh interface remains as-is, so only thing that changes is the process for retrieving tokens/credentials.  
+I've been putting off the OAuth 2.0 upgrade, until I had no choice this morning.  My OAuth 1.0 tokens expired today, so I followed the OAuth 1.0 process outlined below - which has been working solidly for several years now! - to renew my credentials.  Everything worked as expected, until I tried executing the qbo.sh script, and I started receiving authorization failures.  Despite many attempts at a workaround, and after pouring over the latest documentation at QuickBooks Online, I decided the best recourse was to make the leap to OAuth 2.0.  It turned out not to be so difficult after all.  The qbo.sh interface remains as-is, so only thing that changes is the process for retrieving tokens/credentials.  
 
 ## Acquiring OAuth 2.0 tokens (New!)
 1. Install the latest callback.cgi script on an https-enabled webserver.  Record the URI for the script under the QuickBooks tab labeled "OAuth 2.0 Keys"   
