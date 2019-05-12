@@ -1,4 +1,4 @@
-# QuickBooksOnlineScripts
+# QBOnlineScripts
 Simple shell scripts for interfacing with QuickBooks Online API
 
 ## Updated for OAuth 2.0!
