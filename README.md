@@ -6,7 +6,7 @@ I've been putting off the OAuth 2.0 upgrade, until I had no choice this morning.
 
 ## Acquiring OAuth 2.0 tokens (New!)
 1. Install the latest callback.cgi script on an https-enabled webserver.  Record the URI for the script under the QuickBooks tab labeled "OAuth 2.0 Keys"   
-2. Fetch your app's "Client ID" and "Client Secret" from this same tab.  Record the values within qboTokens.conf.
+2. Fetch your app's "Client ID" and "Client Secret" from this same tab.  Record the values within both callback.cgi and qboTokens.conf.
 3. Run o2Token.sh.  The script does little more than print a hyperlink that you need to copy-and-paste into a web browser.
 4. If all goes as expected, you'll be redirected to a QuickBooks login page.  Enter your credentials, select your app, and click OK/confirm.  QuickBooks will then invoke your callback.cgi function and supply so-called "refresh" and "access" tokens.  The script will then save these tokens into a local file called oauth.txt.
 5. The more important of the two tokens is the "refresh" token, since this one has a 6-month expiration period.  The "refresh" token is used to obtain the "access" token, which only has a lifespan of about 1 hour. It's the "access" token that's needed to invoke QuickBooks API functions. Retreive the value of the "refresh" token from oauth.txt, and assign it to the appropriate vairiable in qboTokens.conf.  At this point you can do the same with the "access" token, but it doesn't really matter, since you'll need to renew the "access" token whenever you start a qbo.sh session.
