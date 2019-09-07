@@ -7,6 +7,7 @@ do
 	[ "$v" ] && export $v
 done
 
+export QBO_SANDBOX=$state
 TOKENFILE=/home/pi/etc/${QBO_SANDBOX}qboTokens.conf; . $TOKENFILE
 AUTH=$(print -n "$OAUTH2_CLIENT:$OAUTH2_SECRET" | base64 -w0)
 REDIR=$(urlencode "$OAUTH2_CALLBACK")
