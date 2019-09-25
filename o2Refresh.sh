@@ -12,7 +12,7 @@ json=$(curl -s -H "Authorization: Basic $AUTH" -d "grant_type=refresh_token&refr
 refresh_token=$(print "$json" | sed -e 's/.*"refresh_token":"\([^"]\+\)".*/\1/')
 access_token=$(print "$json" | sed -e 's/.*"access_token":"\([^"]\+\)".*/\1/')
 
-ed $TOKENFILE <<EOF
+ed $TOKENFILE <<EOF 2>/dev/null
 /OAUTH2_REFRESH_TOKEN/
 d
 a
