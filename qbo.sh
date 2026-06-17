@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/bin/bash
 
 METHOD=${1:?Enter METHOD}
 API=${2:?Enter API URI}
@@ -7,7 +7,7 @@ case "$METHOD" in
 	GET|POST)
 		;;
 	*)
-		print "METHOD not recognized: $METHOD"; exit
+		echo "METHOD not recognized: $METHOD"; exit
 		;;
 esac
 
@@ -21,7 +21,7 @@ TOKENFILE=${TOKENFILE%/bin/*}/etc/${QBO_SANDBOX}qboTokens.conf
 
 . $TOKENFILE
 
-URL=$(eval print ${QBO_APIBASE}${API})
+URL=$(eval echo ${QBO_APIBASE}${API})
 
 case "$METHOD" in
 
@@ -34,4 +34,4 @@ case "$METHOD" in
 		;;
 esac
 
-print
+echo
