@@ -21,7 +21,7 @@ sed -i \
 	-e "s/^OAUTH2_ACCESS_TOKEN=.*/OAUTH2_ACCESS_TOKEN=\"${access_token}\"/" \
 $TOKENFILE
 
-print "Content-type: text/html\\n\\n"
+print "Content-type: text/html\n"
 print "<html>"
 print "<pre>"
 jq . <<<${json}
