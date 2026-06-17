@@ -16,7 +16,8 @@ while [ "$*" ]; do
 	PARAMS+="${1%%=*}=$(urlencode "${1#*=}")"; shift
 done
 
-TOKENFILE=$HOME/etc/${QBO_SANDBOX}qboTokens.conf
+TOKENFILE=$(type -p $0)
+TOKENFILE=${TOKENFILE%/bin/*}/etc/${QBO_SANDBOX}qboTokens.conf
 
 . $TOKENFILE
 
