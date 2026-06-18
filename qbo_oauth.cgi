@@ -23,8 +23,8 @@ refresh_token=$(jq -r .refresh_token <<<${json})
 access_token=$(jq -r .access_token <<<${json})
 
 sed -i \
-	-e "s/^OAUTH2_REFRESH_TOKEN=.*/OAUTH2_REFRESH_TOKEN=\"${refresh_token}\"/" \
-	-e "s/^OAUTH2_ACCESS_TOKEN=.*/OAUTH2_ACCESS_TOKEN=\"${access_token}\"/" \
+	-e "s/\(OAUTH2_REFRESH_TOKEN=\).*/\1\"${refresh_token}\"/" \
+	-e "s/\(OAUTH2_ACCESS_TOKEN=\).*/\1\"${access_token}\"/" \
 $TOKENFILE
 
 flock -u 200
