@@ -17,7 +17,7 @@ flock -x 200
 
 AUTH=$(echo -n "$OAUTH2_CLIENT:$OAUTH2_SECRET" | base64 -w0)
 REDIR=$(urlencode "$OAUTH2_CALLBACK")
-json=$(curl -s -H "Authorization: Basic $AUTH" -d "grant_type=authorization_code&code=$code&redirect_uri=$REDIR" "$OAUTH2_TOKEN_SERVER")
+json=$(curl -s -H "Authorization: Basic $AUTH" -H "x-include-refresh-token-hard-expires-in: true" -d "grant_type=authorization_code&code=$code&redirect_uri=$REDIR" "$OAUTH2_TOKEN_SERVER")
 
 refresh_token=$(jq -r .refresh_token <<<${json})
 access_token=$(jq -r .access_token <<<${json})
