@@ -4,7 +4,7 @@ TOKENFILE=$(type -p $0)
 TOKENFILE=${TOKENFILE%/bin/*}/etc/${QBO_SANDBOX}qboTokens.conf
 . $TOKENFILE
 
-LOCKFILE=${TOKENFILE%/*}/qboToken.lock
+LOCKFILE=${TOKENFILE%/*}/qboTokens.lock
 exec 200>$LOCKFILE
 
 flock -x 200

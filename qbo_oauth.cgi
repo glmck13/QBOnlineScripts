@@ -10,7 +10,7 @@ done
 TOKENFILE=$(urlencode -d $state)
 [ -f $TOKENFILE ] && . $TOKENFILE
 
-LOCKFILE=${TOKENFILE%/*}/qboToken.lock
+LOCKFILE=${TOKENFILE%/*}/qboTokens.lock
 exec 200>$LOCKFILE
 
 flock -x 200
